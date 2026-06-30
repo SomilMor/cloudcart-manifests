@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cloudcart
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/SomilMor/cloudcart-manifests.git
+    targetRevision: main
+    path: k8s
+    directory:
+      recurse: true
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
