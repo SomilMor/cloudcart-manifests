@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: order-service
-        image: somil7/order-service:31
+        image: somil7/order-service:32
         ports:
         - containerPort: 3000
