@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: user-service
-        image: somil7/user-service:24
+        image: somil7/user-service:31
         ports:
         - containerPort: 3000
