@@ -3,6 +3,7 @@ kind: Application
 metadata:
   name: cloudcart
   namespace: argocd
+
 spec:
   project: default
 
@@ -18,5 +19,9 @@ spec:
     namespace: default
 
   syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
     syncOptions:
       - CreateNamespace=true
